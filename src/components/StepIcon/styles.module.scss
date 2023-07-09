@@ -1,0 +1,42 @@
+@import 'styles/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  &.default {
+    color: $color-tertiary;
+    border: 2px solid $color-grey-200;
+  }
+  &.completed {
+    color: $color-white;
+    background-color: $color-primary;
+    border: none;
+  }
+  &.active {
+    border: 2px solid $color-primary;
+    background-color: $color-white;
+    color: $color-primary;
+  }
+  &.error {
+    background-color: $color-error;
+    color: $color-white;
+    border: none;
+  }
+}
+
+$icon-sizes: (
+  ('xs', 3rem, 3rem),
+  ('sm', 4rem, 4rem),
+  ('md', 5rem, 5rem),
+  ('lg', 6rem, 6rem)
+);
+
+@each $name, $width, $height in $icon-sizes {
+  .size-#{$name} {
+    width: $width;
+    height: $height;
+  }
+}

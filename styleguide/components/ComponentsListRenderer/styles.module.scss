@@ -1,0 +1,24 @@
+@import 'styles/variables.scss';
+
+.root {
+  background: $color-white;
+}
+
+.item {
+  width: 100%;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  & > a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color: $color-primary;
+    }
+  }
+  svg {
+    fill: $color-primary;
+  }
+}

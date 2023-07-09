@@ -1,0 +1,45 @@
+@import 'styles/variables.scss';
+
+.root {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  padding-left: spacing(6);
+  align-items: center;
+  height: 24px;
+  transition: all 0.25s ease;
+
+  &.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    color: $color-grey-200;
+  }
+
+  &:not(.disabled):not(.intermediate).checked {
+    .icon {
+      color: $color-red-500;
+    }
+  }
+
+  &.disabled.checked {
+    .icon {
+      color: $color-red-100;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: $color-grey-500;
+  }
+}
+
+.content {
+  margin-left: spacing(2);
+}
+
+.input {
+  display: none;
+}

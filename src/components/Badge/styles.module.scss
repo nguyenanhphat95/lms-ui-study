@@ -1,0 +1,145 @@
+@import 'styles/variables.scss';
+$RADIUS_STANDARD: 10px;
+$RADIUS_DOT: 4px;
+
+/* Styles applied to the root element. */
+.root {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Styles applied to the badge `span` element. */
+.badge {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  font-size: $font-size-tiny;
+  min-width: $RADIUS_STANDARD * 2.2;
+  height: $RADIUS_STANDARD * 2.1;
+  line-height: 1;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all 0.2s;
+}
+
+/* Styles applied to the root element if `color="primary"`. */
+.colorPrimary {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+/* Styles applied to the root element if `color="secondary"`. */
+.colorSecondary {
+  background-color: $color-secondary;
+  color: $color-white;
+}
+
+/* Styles applied to the root element if `color="error"`. */
+.colorError {
+  background-color: $color-error;
+  color: $color-white;
+  border: solid 1px $color-border;
+}
+
+/* Styles applied to the root element if `variant="dot"`. */
+.dot {
+  border-radius: $RADIUS_DOT;
+  height: $RADIUS_DOT * 2;
+  min-width: $RADIUS_DOT * 2;
+  padding: 0;
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }} overlap="rectangle"`. */
+.anchorOriginTopRightRectangle {
+  top: 0;
+  right: 0;
+  transform: scale(1) translate(50%, -50%);
+  transform-origin: 100% 0%;
+  &.invisible {
+    transform: scale(0) translate(50%, -50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }} overlap="rectangle"`. */
+.anchorOriginBottomRightRectangle {
+  bottom: 0;
+  right: 0;
+  transform: scale(1) translate(50%, 50%);
+  transform-origin: 100% 100%;
+  &.invisible {
+    transform: scale(0) translate(50%, 50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }} overlap="rectangle"`. */
+.anchorOriginTopLeftRectangle {
+  top: 0;
+  left: 0;
+  transform: scale(1) translate(-50%, -50%);
+  transform-origin: 0% 0%;
+  &.invisible {
+    transform: scale(0) translate(-50%, -50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }} overlap="rectangle"`. */
+.anchorOriginBottomLeftRectangle {
+  bottom: 0;
+  left: 0;
+  transform: scale(1) translate(-50%, 50%);
+  transform-origin: 0% 100%;
+  &.invisible {
+    transform: scale(0) translate(-50%, 50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }} overlap="circle"`. */
+.anchorOriginTopRightCircle {
+  top: 14%;
+  right: 14%;
+  transform: scale(1) translate(50%, -50%);
+  transform-origin: 100% 0%;
+  &.invisible {
+    transform: scale(0) translate(50%, -50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }} overlap="circle"`. */
+.anchorOriginBottomRightCircle {
+  bottom: 14%;
+  right: 14%;
+  transform: scale(1) translate(50%, 50%);
+  transform-origin: 100% 100%;
+  &.invisible {
+    transform: scale(0) translate(50%, 50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }} overlap="circle"`. */
+.anchorOriginTopLeftCircle {
+  top: 14%;
+  left: 14%;
+  transform: scale(1) translate(-50%, -50%);
+  transform-origin: 0% 0%;
+  &.invisible {
+    transform: scale(0) translate(-50%, -50%);
+  }
+}
+
+/* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }} overlap="circle"`. */
+.anchorOriginBottomLeftCircle {
+  bottom: 14%;
+  left: 14%;
+  transform: scale(1) translate(-50%, 50%);
+  transform-origin: 0% 100%;
+  &.invisible {
+    transform: scale(0) translate(-50%, 50%);
+  }
+}

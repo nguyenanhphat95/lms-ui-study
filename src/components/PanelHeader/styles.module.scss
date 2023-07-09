@@ -1,0 +1,10 @@
+@import 'styles/variables.scss';
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  padding: spacing(2.5);
+  width: 100%;
+  background: $color-grey-25;
+  border-bottom: 1px solid $color-grey-100;
+}

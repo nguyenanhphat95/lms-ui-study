@@ -1,0 +1,18 @@
+@import 'styles/variables.scss';
+
+/*
+  name, text-align
+*/
+$aligns: (
+  ('inherit', inherit),
+  ('left', left),
+  ('center', center),
+  ('right', right),
+  ('justify', justify)
+);
+
+@each $name, $value in $aligns {
+  .align-#{$name} {
+    text-align: $value;
+  }
+}

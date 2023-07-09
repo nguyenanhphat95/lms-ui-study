@@ -1,0 +1,146 @@
+$color-red-700: #a61a19;
+$color-red-600: #d52220;
+$color-red-500: #e94545;
+$color-red-400: #f1514f;
+$color-red-300: #f47c7b;
+$color-red-100: #fbcbcb;
+$color-red-50: #fde5e4;
+$color-green-700: #336f48;
+$color-green-600: #449460;
+$color-green-500: #55ba78;
+$color-green-400: #77c793;
+$color-green-300: #99d5ae;
+$color-green-100: #d6efdf;
+$color-green-50: #eaf6ee;
+$color-green-25: #f5fbf7;
+$color-green-border-coloured: #eaf6ee;
+$color-cyan-700: #0d8183;
+$color-cyan-600: #11a7a9;
+$color-cyan-500: #14babd;
+$color-cyan-400: #43c7ca;
+$color-cyan-300: #72d5d7;
+$color-cyan-100: #c7efef;
+$color-cyan-50: #e2f6f7;
+$color-cyan-25: #f1fbfb;
+$color-cyan-border-coloured: #e2f6f7;
+$color-orange-700: #a64b09;
+$color-orange-600: #d5600c;
+$color-orange-500: #ee6c0e;
+$color-orange-400: #f1893e;
+$color-orange-300: #f4a66e;
+$color-orange-100: #fbdcc5;
+$color-orange-50: #fdede2;
+$color-orange-25: #fef6f1;
+$color-orange-border-coloured: #fdede2;
+$color-yellow-600: #997600;
+$color-yellow-500: #cc9e00;
+$color-yellow-400: #ffc600;
+$color-yellow-300: #ffd133;
+$color-yellow-200: #ffdc66;
+$color-yellow-50: #fff2c2;
+$color-yellow-25: #fff8e0;
+$color-yellow-10: #fffcf0;
+$color-yellow-border-coloured: #fff8e0;
+$color-blue-900: #0e3556;
+$color-blue-800: #112b86;
+$color-blue-700: #133096;
+$color-blue-600: #4259ab;
+$color-blue-500: #7182c0;
+$color-blue-200: #c7cee6;
+$color-blue-50: #e2e6f2;
+$color-blue-25: #f1f3f9;
+$color-blue-border-coloured: #e2e6f2;
+$color-purple-700: #443d83;
+$color-purple-600: #584fa8;
+$color-purple-500: #6258bc;
+$color-purple-400: #8179c9;
+$color-purple-300: #a09ad6;
+$color-purple-100: #dad7ef;
+$color-purple-50: #ecebf7;
+$color-purple-25: #f6f5fb;
+$color-purple-border-coloured: #ecebf7;
+$color-grey-900: #0f1e29;
+$color-grey-800: #27343e;
+$color-grey-700: #3f4b53;
+$color-grey-600: #576169;
+$color-grey-500: #6f787e;
+$color-grey-400: #878e94;
+$color-grey-300: #9fa5a9;
+$color-grey-200: #bdbdbd;
+$color-grey-100: #e4e4e4;
+$color-grey-50: #e7e8ea;
+$color-grey-25: #f2f3f4;
+$color-grey-10: #f1f0f0;
+
+$color-grey-disabled: #e2e2e2;
+
+$color-black-400: #515050;
+$color-black-500: #333333;
+
+$color-grey-border-grey: #f2f3f4;
+$color-white: #ffffff;
+$color-near-white: #fafafa;
+$color-black: #000000;
+$color-near-black: #222222;
+
+$box-shadow-lv-1: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+$box-shadow-lv-2: 0 -4px 16px 0 rgba(0, 0, 0, 0.1),
+  0 8px 16px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-lv-3: 0 -8px 32px 0 rgba(0, 0, 0, 0.1),
+  0 16px 32px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-lv-4: 0 -16px 64px 0 rgba(0, 0, 0, 0.1),
+  0 32px 64px 0 rgba(0, 0, 0, 0.1);
+
+$button-transition-background: background-color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+$black-opacity-10: rgba(0, 0, 0, 0.1);
+$black-opacity-075: rgba(0, 0, 0, 0.075);
+$black-opacity-05: rgba(0, 0, 0, 0.05);
+$black-opacity-025: rgba(0, 0, 0, 0.025);
+
+$color-primary: #34075b;
+$color-secondary: #00a859;
+$color-tertiary: #757575;
+$color-success: $color-green-500;
+$color-warning: $color-orange-500;
+$color-title: #2a2a2a;
+$color-sub: #696969;
+$color-title-sub: $color-grey-700;
+$color-link: #1e64ad;
+$color-invert: $color-white;
+$color-error: $color-red-500;
+$color-disable: $color-grey-disabled;
+$color-default: $color-black;
+$color-title-default: $color-black-500;
+$color-logo: #d9292a;
+$color-grey-opacity: $color-grey-10;
+$color-form-label: #8b99a5;
+$color-hint: #828282;
+
+$color-hot: #f3811f;
+$color-border: #eeeeee;
+$color-divider: #c7c6c6;
+$color-rating-deactive: #c0c0c0;
+$color-rating-active: #e5c56b;
+$color-background-icon: #f9f9f9;
+
+// skeleton
+$color-background-skeleton: #f4f3f4;
+
+// post-status
+$color-request: #e5a13b;
+$color-dark-blue: #1a5b7e;
+$color-placeholder: #c0c0c0;
+
+$color-unread: #d1f5f4;
+
+/**
+* Fundoo start here
+**/
+
+$color-deactive: #f3f5f7;
+$color-price: #ec268f;
+$color-grey-background: #f7f8f8;
+$color-feed-title: #595ba6;
+$color-box-background: #4aa561;
+$color-text-disabled: #adadad;

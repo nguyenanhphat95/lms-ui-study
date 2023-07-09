@@ -1,0 +1,42 @@
+@import 'styles/variables.scss';
+
+.root {
+  flex: 1 1 auto;
+  .line-connector {
+    display: block;
+    border-color: $color-grey-100;
+  }
+
+  &.completed,
+  &.active {
+    .line-connector {
+      border-color: $color-primary;
+    }
+  }
+}
+
+.alternativeLabel {
+  position: absolute;
+  top: 22px;
+  left: calc(-50% + 24px);
+  right: calc(50% + 24px);
+}
+
+.lineHorizontal {
+  border-top-style: solid;
+  border-top-width: 3px;
+}
+
+.lineVertical {
+  border-left-style: solid;
+  border-left-width: 3px;
+  min-height: 2.4rem;
+}
+
+$icon-sizes: (('xs', 1.5rem), ('sm', 2rem), ('md', 2.5rem), ('lg', 3rem));
+
+@each $name, $size in $icon-sizes {
+  .vertical-#{$name} {
+    margin-left: $size;
+  }
+}

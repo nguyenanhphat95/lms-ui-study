@@ -1,0 +1,23 @@
+@import 'styles/variables.scss';
+.root {
+  cursor: progress;
+  svg {
+    :global {
+      animation: Spinning 0.75s linear infinite;
+      @keyframes :global(Spinning) {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    path:first-child {
+      fill: $color-white;
+    }
+    path:last-child {
+      fill: $color-white;
+    }
+  }
+}

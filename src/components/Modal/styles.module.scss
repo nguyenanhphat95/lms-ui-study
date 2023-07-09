@@ -1,0 +1,22 @@
+@import 'styles/variables.scss';
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  overflow: hidden;
+  border: none;
+  box-shadow: $box-shadow-lv-1;
+}
+
+.icon {
+  cursor: pointer;
+  fill: #838383;
+  path {
+    fill: #838383;
+  }
+}

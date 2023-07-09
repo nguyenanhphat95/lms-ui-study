@@ -1,0 +1,1 @@
+{"version":3,"file":"setRef.js","sourceRoot":"","sources":["../../src/utils/setRef.ts"],"names":[],"mappings":";;AAAA,SAAwB,MAAM,CAC5B,GAAyF,EACzF,KAAe;IAEf,IAAI,OAAO,GAAG,KAAK,UAAU,EAAE;QAC7B,GAAG,CAAC,KAAK,CAAC,CAAC;KACZ;SAAM,IAAI,GAAG,EAAE;QACd,GAAG,CAAC,OAAO,GAAG,KAAK,CAAC;KACrB;AACH,CAAC;AATD,yBASC"}

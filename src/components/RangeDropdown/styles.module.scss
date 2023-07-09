@@ -1,0 +1,84 @@
+@import 'styles/variables.scss';
+
+.root {
+  cursor: pointer;
+}
+
+.input {
+  border-radius: radius(1.25);
+}
+
+@mixin active {
+  background-color: $color-primary;
+  span {
+    color: $color-white;
+  }
+}
+
+.popover {
+  max-width: 30rem;
+}
+
+.chip {
+  width: 100%;
+  min-width: 10rem;
+  cursor: pointer;
+  &:hover {
+    @include active;
+  }
+  span {
+    color: $color-sub;
+  }
+}
+
+.active {
+  @include active;
+}
+
+$sizes: (
+  ('lg', spacing(6), spacing(3), spacing(4), $font-size-body2),
+  ('md', spacing(6), spacing(2), spacing(4), $font-size-body2),
+  ('sm', spacing(4), spacing(2), spacing(2), $font-size-body2),
+  ('xs', spacing(3), spacing(1.5), spacing(2), $font-size-tiny)
+);
+
+@each $name, $line-height, $padding-vertical, $padding-horizontal,
+  $font-size in $sizes
+{
+  .select-size-#{$name} {
+    padding: $padding-vertical $padding-horizontal;
+    line-height: $line-height;
+    font-size: $font-size !important;
+  }
+}
+
+.btn-clear {
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+.dropdown-icon {
+  transform: rotate(90deg);
+  fill: $color-form-label;
+}
+
+.icon-open {
+  transform: rotate(270deg);
+}
+
+/*
+  values: name, font-size
+*/
+$label-sizes: (
+  ('lg', $font-size-body2, spacing(6)),
+  ('md', $font-size-body2, spacing(6)),
+  ('sm', $font-size-body2, spacing(4)),
+  ('xs', $font-size-tiny, spacing(3))
+);
+@each $name, $size, $line-height in $label-sizes {
+  .label-size-#{$name} {
+    font-size: $size;
+    line-height: $line-height;
+  }
+}

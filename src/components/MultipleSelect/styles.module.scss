@@ -1,0 +1,121 @@
+@import 'styles/variables.scss';
+
+.root {
+  cursor: pointer;
+}
+
+.search-text {
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-rating-deactive;
+  }
+}
+
+.input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: visible;
+  & > div {
+    border-radius: radius(1.25);
+  }
+  & > div > span {
+    overflow: visible;
+  }
+}
+
+/*
+  values: name, font-size
+*/
+$label-sizes: (
+  ('lg', $font-size-body2, spacing(6)),
+  ('md', $font-size-body2, spacing(6)),
+  ('sm', $font-size-body2, spacing(4)),
+  ('xs', $font-size-tiny, spacing(3))
+);
+@each $name, $size, $line-height in $label-sizes {
+  .label-size-#{$name} {
+    font-size: $size;
+    line-height: $line-height;
+  }
+}
+
+.wrapper-chip {
+  position: relative;
+  line-height: initial;
+}
+
+.badge {
+  width: 1.8rem;
+  height: 1.8rem;
+  line-height: 1.4rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  transform: scale(1) translate(50%, -50%);
+  transform-origin: 100% 0%;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: $font-size-tiny;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$sizes: (('lg', 3, 4), ('md', 2, 4), ('sm', 2, 2), ('xs', 1.5, 2));
+
+@each $name, $vertical, $horizontal in $sizes {
+  .multiple-select-size-#{$name} {
+    padding: spacing($vertical) spacing($horizontal);
+    padding-right: 0;
+    line-height: 1.29;
+  }
+}
+
+.icon {
+  transform: rotate(90deg);
+  fill: $color-form-label;
+}
+
+.icon-open {
+  transform: rotate(270deg);
+}
+
+.item {
+  padding-left: spacing(1.5);
+  padding-right: spacing(1.5);
+}
+
+.popover {
+  :global {
+    ::-webkit-scrollbar-track {
+      border-radius: radius(4);
+      background-color: $color-border;
+    }
+    ::-webkit-scrollbar {
+      width: 0.3rem;
+      background-color: $color-border;
+    }
+    ::-webkit-scrollbar-thumb {
+      width: 0.3rem;
+      border-radius: 0.15rem;
+      background-color: $color-rating-deactive;
+    }
+  }
+}
+
+.boxListItem {
+  min-width: 27rem;
+  max-height: 30rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: spacing(4);
+  width: auto;
+}
+
+.btn-clear {
+  &:hover {
+    font-weight: 700;
+  }
+}

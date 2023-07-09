@@ -1,0 +1,122 @@
+@import 'styles/variables.scss';
+
+.root {
+  cursor: pointer;
+  display: inline-flex;
+  border-bottom: 1px solid transparent;
+  color: $color-default;
+  justify-content: center;
+  transition: all 0.25s ease;
+  position: relative;
+  font-size: $font-size-body2;
+
+  &.border {
+    border-bottom: 1px solid $color-grey-25;
+  }
+
+  &.horizontal {
+    cursor: pointer;
+    display: inline-flex;
+    border-bottom: 1px solid transparent;
+    color: $color-default;
+    justify-content: center;
+    position: relative;
+  }
+
+  &.vertical {
+    padding-top: spacing(3);
+    padding-bottom: spacing(3);
+    border-bottom: 0;
+    justify-content: flex-start;
+    padding-left: spacing(3);
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 4px;
+      top: 2px;
+      bottom: 2px;
+      border-radius: 20px;
+      background-color: transparent;
+      height: 0;
+      transition: 0.2s;
+    }
+  }
+
+  .tag {
+    color: $color-white;
+    background-color: $color-grey-500;
+  }
+
+  &:not(.disabled).activated {
+    color: $color-primary;
+    border-bottom: 2px solid $color-red-500;
+
+    .tag {
+      color: $color-white;
+      background-color: $color-red-500;
+    }
+
+    &.vertical {
+      border-bottom: 0;
+      &::after {
+        height: 100%;
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  &:not(.disabled):hover {
+    color: $color-primary;
+
+    .tag {
+      color: $color-white;
+      background-color: $color-red-500;
+    }
+
+    &.horizontal {
+      border-bottom: 2px solid $color-primary;
+    }
+
+    &.vertical {
+      border-bottom: 0;
+      &::after {
+        height: 100%;
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: unset;
+    pointer-events: none;
+    color: $color-grey-200;
+    border-bottom: 2px solid transparent;
+  }
+
+  &.full-width {
+    flex: auto;
+  }
+}
+
+// name, font size, line-height, padding vertical, padding horizontal.
+$text-sizes: (
+  ('xl', $font-size-body1, 1.38, spacing(4.25), spacing(2)),
+  ('lg', $font-size-body2, 1.29, spacing(3.75), spacing(2)),
+  ('md', $font-size-body2, 1.29, spacing(2.75), spacing(2))
+);
+@each $name, $font-size, $line-height, $padding-vertical, $padding-horizontal in $text-sizes {
+  .horizontal {
+    &.size-#{$name} {
+      padding: $padding-vertical $padding-horizontal calc(#{$padding-vertical} - 1px);
+      line-height: $line-height;
+      font-size: $font-size;
+      &.activated,
+      &.disabled,
+      &:hover {
+        padding-bottom: calc(#{$padding-vertical} - 2px);
+      }
+    }
+  }
+}

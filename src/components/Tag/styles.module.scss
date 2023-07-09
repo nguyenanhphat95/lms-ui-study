@@ -1,0 +1,37 @@
+@import 'styles/variables.scss';
+
+$transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+.tag {
+  display: inline-block;
+  padding: spacing(1.25) spacing(4);
+  font-size: $font-size-body2;
+  font-weight: $font-weight-regular;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: radius(4);
+  transition: $transition;
+  border: solid 1px;
+}
+
+/*
+  types list
+  Order values: name, color, background color, border-color
+*/
+$types: (
+  ('inherit', inherit, inherit, inherit),
+  ('primary', $color-white, $color-primary, $color-primary),
+  ('default', $color-black-500, $color-grey-10, $color-grey-10),
+  ('outlined', $color-primary, $color-white, $color-primary)
+);
+
+@each $name, $color, $background-color, $border-color in $types {
+  .tag-type-#{$name} {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+  }
+}

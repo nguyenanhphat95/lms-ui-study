@@ -1,0 +1,14 @@
+@import 'styles/variables.scss';
+
+.root {
+  padding: .8rem;
+}
+
+$alert-colors: (('alert' $color-red-500 $color-white), ('highlight' $color-request $color-default));
+
+@each $name, $bg, $color in $alert-colors {
+  .type-#{$name} {
+    background-color: $bg;
+    color: $color;
+  }
+}

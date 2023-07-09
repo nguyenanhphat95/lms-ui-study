@@ -1,0 +1,138 @@
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
+@import './variables.scss';
+
+// ========================================
+// Reset rem
+// ========================================
+$rem-to-pixel: 10px;
+
+// ========================================
+// Font family variables
+// ========================================
+$font-family-base: 'Roboto', sans-serif;
+$font-size-base: 1.4rem;
+$line-height-base: 1.8rem;
+$font-weight-base: 400;
+$font-weight-bolder: $font-weight-bold;
+
+$body-color: $color-default !default;
+$body-bg: $color-grey-10 !default;
+$body-text-align: null !default;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+html {
+  font-size: $rem-to-pixel;
+}
+
+body {
+  margin: 0; // 1
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  text-align: $body-text-align;
+  background-color: $body-bg; // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba($color-black, 0); // 4
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+/**
+* lazyload image
+*/
+
+// reset
+img.lazyload,
+img.lazyloading {
+  min-height: unset !important;
+  min-width: unset !important;
+  max-width: 50% !important;
+  height: unset !important;
+  width: unset !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.lazyload {
+  transform: translateZ(0);
+  opacity: 0.5;
+  will-change: transform, opacity, filter;
+}
+
+.lazyloading {
+  transform: translateZ(0);
+  opacity: 0.5;
+  will-change: transform, opacity, filter;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transform: translateZ(0);
+  transition: opacity 400ms;
+  will-change: transform, opacity, filter;
+  filter: unset;
+  filter: blur(0);
+}
+
+/**
+* toastify
+*/
+
+.Toastify__toast-container {
+  left: 18rem !important;
+}
+
+@mixin transform {
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: translate3d(0, 110%, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    @include transform;
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    @include transform;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(-150%, 0, 0);
+    opacity: 0;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+}
+
+/* custom */

@@ -1,0 +1,14 @@
+@import 'styles/variables.scss';
+
+.panel {
+  overflow: hidden;
+  background: $color-white;
+}
+
+.border {
+  border: 1px solid $color-grey-100;
+}
+
+.border-radius {
+  border-radius: radius(2);
+}

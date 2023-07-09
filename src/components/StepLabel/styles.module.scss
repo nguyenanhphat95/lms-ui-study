@@ -1,0 +1,65 @@
+@import '@fundoo/ui/styles/variables.scss';
+.root {
+  display: flex;
+  align-items: center;
+  &.alternativeLabel {
+    flex-direction: column;
+  }
+  &.disabled {
+    cursor: default;
+  }
+}
+
+.vertical {
+  text-align: left;
+  padding: 8px 0;
+}
+.noSpacingY {
+  padding: 0px 0px;
+}
+
+.label {
+  &.active {
+    color: $color-primary;
+    // color: theme.palette.text.primary,
+  }
+  &.completed {
+    color: $color-primary;
+    // color: theme.palette.text.primary,
+  }
+  &.alternativeLabel {
+    text-align: center;
+    margin-top: 16px;
+  }
+  &.error {
+    // color: theme.palette.error.main,
+    color: red;
+  }
+}
+
+.iconContainer {
+  flex-shrink: 0; // fix-bug IE
+  display: flex;
+  padding-right: 8px;
+  &.alternativeLabel {
+    padding-right: 0;
+  }
+}
+
+.labelContainer {
+  // width: 100%;
+  // text-align: center;
+}
+
+$label-sizes: (
+  ('xs', $font-size-body2),
+  ('sm', $font-size-body1),
+  ('md', $font-size-subtitle3),
+  ('lg', $font-size-subtitle2)
+);
+
+@each $name, $size in $label-sizes {
+  .size-#{$name} {
+    font-size: $size;
+  }
+}

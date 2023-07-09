@@ -1,0 +1,93 @@
+@import 'styles/variables.scss';
+
+.root {
+  display: block;
+  background-color: #ccc;
+}
+
+$radius: (
+  ('none', 0),
+  ('light', $radius-light),
+  ('regular', $radius-regular),
+  ('bold', $radius-bold),
+  ('max', $radius-max)
+);
+
+@each $name, $radius-value in $radius {
+  .radius-#{$name} {
+    border-radius: $radius-value;
+  }
+}
+
+.text {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
+  border-radius: $radius;
+  &:empty:before {
+    content: '\00a0';
+  }
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.pulse {
+  :global {
+    animation: pulse 1.5s ease-in-out 0.5s infinite;
+  }
+  @keyframes :global(pulse) {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.wave {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    animation: wave 1.6s linear 0.5s infinite;
+    background: linear-gradient(90deg, transparent, #ddd, transparent);
+    content: '';
+    position: absolute;
+    transform: translateX(-100%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.withChildren {
+  & > * {
+    visibility: hidden;
+  }
+}
+
+.fitContent {
+  max-width: fit-content;
+}
+
+.heightAuto {
+  height: auto;
+}

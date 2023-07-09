@@ -1,0 +1,69 @@
+@import 'styles/variables.scss';
+
+.name {
+  color: $color-orange-600;
+}
+.type {
+  color: $color-cyan-700;
+}
+.description {
+}
+
+.root {
+  display: table;
+  padding: 1px;
+  width: 100%;
+  background-color: $color-grey-100;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid transparent;
+  border-radius: $radius-regular;
+  overflow: hidden;
+  line-height: 1.33;
+}
+
+.header {
+  background-color: $color-grey-25;
+  .cell {
+    font-size: $font-size-caption;
+    font-weight: $font-weight-bold;
+    color: $color-grey-700;
+  }
+}
+
+.body {
+  background: #fff;
+  .cell,
+  .cell-empty {
+    font-size: $font-size-caption;
+    font-weight: $font-weight-regular;
+    color: $color-grey-700;
+  }
+  .cell-empty {
+    text-align: center;
+    color: $color-grey-300;
+  }
+}
+
+.footer {
+  background: #fff;
+}
+
+.row {
+  transition: all 0.25s ease;
+  &:hover {
+    background: $color-blue-25;
+  }
+  &.active {
+    background: $color-blue-50;
+  }
+  &:active {
+    background: $color-blue-200;
+  }
+}
+
+.cell,
+.cell-empty {
+  padding: 1.6rem;
+  border: 1px solid $color-grey-100;
+}

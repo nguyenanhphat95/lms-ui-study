@@ -1,0 +1,31 @@
+@import 'styles/variables.scss';
+
+.item {
+  cursor: pointer;
+  padding: spacing(2);
+  color: $color-grey-500;
+  transition: all 0.1s ease;
+
+  &:hover {
+    background: $color-grey-500;
+    color: $color-white;
+
+    .name {
+      background: rgba(0, 0, 0, 0.15);
+      color: $color-white;
+    }
+  }
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+}
+
+.name {
+  padding: spacing(2);
+  background: $color-grey-10;
+  border-radius: radius(1);
+}

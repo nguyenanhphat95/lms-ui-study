@@ -1,0 +1,9 @@
+$radius: 4px;
+$radius-light: $radius / 2;
+$radius-regular: $radius;
+$radius-bold: $radius * 2;
+$radius-max: $radius * 4;
+
+@function radius($value) {
+  @return $radius * $value;
+}

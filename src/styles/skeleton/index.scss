@@ -1,0 +1,25 @@
+@import './skeletons.scss';
+
+.skeleton {
+  @include skeleton();
+}
+
+.thumbnail {
+  @include skeleton('thumbnail');
+}
+
+.line {
+  @include skeleton('line');
+}
+
+.lineSm {
+  @include skeleton('line', 'sm');
+}
+
+.lineMd {
+  @include skeleton('line', 'md');
+}
+
+.lineLg {
+  @include skeleton('line', 'lg');
+}

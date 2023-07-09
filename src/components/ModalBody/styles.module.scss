@@ -1,0 +1,10 @@
+@import 'styles/variables.scss';
+
+.root {
+  padding: spacing(4) spacing(6);
+  color: $color-grey-700;
+
+  &.not-spacing-bottom {
+    padding-bottom: 0;
+  }
+}

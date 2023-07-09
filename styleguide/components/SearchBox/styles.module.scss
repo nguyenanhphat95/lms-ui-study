@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+
+.search {}
+
+.list {
+  height: auto;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+.search-input {
+  align-items: center;
+}
+
+.search-icon {
+  margin: 0 spacing(2);
+}

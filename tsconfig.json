@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "module": "esnext", //commonjs destroys 'dynamic imports' which is used for code splitting
+    "target": "es5",
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "baseUrl": "./src",
+    "jsx": "preserve", // process JSX
+    "lib": ["dom", "es5", "es6", "es7", "es2017"],
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true, // no errors with commonjs modules interop
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": true, // include js files
+    "alwaysStrict": true,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": true,
+    "strictFunctionTypes": false,
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "strictBindCallApply": true,
+    "typeRoots": ["/node_modules/@types", "/Types/"],
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    // "noEmit": true,
+    "strictNullChecks": false,
+    "noImplicitThis": false,
+    "paths": {
+      "@App/*": ["./*"],
+      "@fundoo/ui": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "src/**/__tests__"]
+}

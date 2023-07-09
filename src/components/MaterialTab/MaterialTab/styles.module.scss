@@ -1,0 +1,90 @@
+@import 'styles/variables.scss';
+
+/* Styles applied to the root element. */
+.root {
+  max-width: 264px;
+  min-width: 72px;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: spacing(1) spacing(5);
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+  }
+}
+
+/* Styles applied to the root element if both `icon` and `label` are provided. */
+.labelIcon {
+  min-height: 72px;
+  padding-top: 9px;
+  & .wrapper > *:first-.child {
+    margin-bottom: 6;
+  }
+}
+
+/* Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor="inherit"`. */
+.textColorInherit {
+  color: inherit;
+  opacity: 0.7;
+  &.selected {
+    opacity: 1;
+  }
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+/* Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor="primary"`. */
+.textColorPrimary {
+  color: $color-primary;
+  &.selected {
+    color: $color-primary;
+  }
+  &.disabled {
+    color: $color-disable;
+  }
+}
+
+/* Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor="secondary"`. */
+.textColorSecondary {
+  color: $color-secondary;
+  &.selected {
+    color: $color-secondary;
+  }
+  &.disabled {
+    color: $color-disable;
+  }
+}
+
+/* Styles applied to the root element if `fullWidth={true}` (controlled by the Tabs component). */
+.fullWidth {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: none;
+}
+
+/* Styles applied to the root element if `wrapped={true}`. */
+.wrapped {
+  font-size: $font-size-caption;
+  line-height: 1.5;
+}
+
+/* Styles applied to the `icon` and `label`'s wrapper element. */
+.wrapper {
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+  }
+}

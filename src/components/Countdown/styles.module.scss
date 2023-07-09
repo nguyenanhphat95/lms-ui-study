@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+.countdown {
+  display: flex;
+  align-items: center;
+}
+
+.countdown-text {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+  margin-right: spacing(2);
+}
+
+.countdown-timer {
+  overflow: hidden;
+  padding: 0.1rem spacing(1);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.countdown-item {
+  text-align: center;
+  &:not(:first-child) {
+    border-left: solid 1px $color-border;
+    padding-left: 0.4rem;
+  }
+}

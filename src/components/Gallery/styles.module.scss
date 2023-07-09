@@ -1,0 +1,115 @@
+@import 'styles/variables.scss';
+
+.root {
+  :global(.image-gallery-slides) {
+    background-color: $color-black;
+  }
+  :global(.image-gallery-left-nav),
+  :global(.image-gallery-right-nav) {
+    svg {
+      transform: scale(0.5);
+    }
+    &:hover {
+      svg {
+        transform: scale(0.6);
+      }
+    }
+  }
+  :global(.image-gallery-slide) {
+    & > div {
+      height: 45rem;
+      max-height: 45rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-black;
+      img {
+        width: inherit;
+        max-width: 100%;
+        max-height: 100% !important;
+        object-fit: cover;
+      }
+    }
+  }
+  :global(.fullscreen .image-gallery-slide) {
+    & > div {
+      height: calc(100vh - 80px);
+      max-height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 100%;
+        max-height: calc(100vh - 80px) !important;
+      }
+    }
+  }
+
+  :global(.image-gallery-thumbnail) {
+    border: solid 1px $color-border;
+    opacity: 0.5;
+    &:hover {
+      border: solid 1px $color-white;
+      opacity: 1;
+    }
+  }
+
+  :global(.image-gallery-thumbnail.active) {
+    border-color: $color-white;
+    opacity: 1;
+  }
+
+  :global(.image-gallery-thumbnails-wrapper) {
+    background-color: $color-black;
+  }
+
+  :global(.image-gallery-thumbnails) {
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.image-gallery-thumbnails .image-gallery-thumbnails-container) {
+    display: inline-flex;
+    align-items: center;
+    margin: auto;
+  }
+}
+
+.wrapper-image-thumbnail {
+  width: 10.6rem;
+  height: 6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 spacing(1);
+}
+
+.image-thumbnail {
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0rem;
+}
+
+.gallery {
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: spacing(4);
+  fill: $color-white;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  &:hover {
+    fill: $color-primary;
+    cursor: pointer;
+  }
+}
+
+.left-arrow {
+  left: spacing(4);
+  transform: rotate(180deg);
+}

@@ -1,0 +1,46 @@
+@import 'styles/variables.scss';
+
+.root {
+  overflow: hidden;
+  min-height: 40px;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.flexContainer {
+  display: flex;
+  // border-bottom: solid 5px $color-unread;
+  padding-bottom: 6px;
+}
+
+.flexContainerVertical {
+  flex-direction: column;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.scroller {
+  position: relative;
+  display: inline-block;
+  flex: 1 1 auto;
+  white-space: nowrap;
+}
+
+.fixed {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.scrollable {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  &::-webkit-.scrollbar {
+    display: none; // Safari + Chrome
+  }
+}

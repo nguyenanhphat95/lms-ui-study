@@ -1,0 +1,32 @@
+@import 'styles/variables.scss';
+
+.rating {
+  display: inline-block;
+}
+
+.stars {
+  font-size: 10px;
+
+  &::before {
+    content: '★★★★★';
+    display: block;
+  }
+}
+
+.stars.empty::before {
+  content: '☆☆☆☆☆';
+  color: unset;
+}
+
+@for $rate from 1 through 20 {
+  .star#{$rate}::before {
+    background: linear-gradient(
+      90deg,
+      $color-rating-active #{percentage($rate * 5 / 100)},
+      $color-rating-deactive 0%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,50 @@
+name: Main Branch Build
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# 수행할 Job
+jobs:
+  main-branch-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192"
+      NUBES_GATEWAY_ADDRESS: a-dev.nubes.sto.navercorp.com:8000
+    strategy:
+      matrix:
+        node-version: [ 14.17.3 ]
+    steps:
+      # Params 준비
+      - name: Prepare params - BUILD_TIME
+        run: echo "BUILD_TIME=`date +%Y%m%d%H%M%S%3N`" >> $GITHUB_ENV
+
+      # Build 준비: checkout / node / nubescli
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ env.GITHUB_REF }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Download - Nubes CLI
+        run: curl -sLo ./nubescli http://owfsrepo.navercorp.com/nubes/dist/nubescli_latest/linux/nubescli && chmod +x nubescli
+
+      # Build - npm / yarn 준비
+      - run: npm i -g yarn
+      - run: rm -rf node_modules && yarn cache clean && yarn install
+
+      # Build - Storybook & Playground
+      - run: yarn docs:build
+
+      # Upload - Nubes: DEV / Build Time
+      - name: Nubes Upload to 'lms-ui/components/dev/{BUILD_TIME}' - Styleguide
+        run: ./nubescli dir-upload lms-ui/components/dev/${{env.BUILD_TIME}}/styleguide ./styleguide --overwrite
+    
+      # Upload - Nubes: DEV / Current
+      - name: Nubes Delete to 'lms-ui/components/dev/current' - Storybook
+        run: ./nubescli delete lms-ui/components/dev/current/storybook --dir
+      - name: Nubes Upload to 'lms-ui/components/dev/current' - Storybook
+        run: ./nubescli dir-upload lms-ui/components/dev/current/storybook ./styleguide --overwrite

@@ -1,0 +1,21 @@
+@import 'styles/variables.scss';
+
+.panel-header {
+  justify-content: space-between;
+  cursor: pointer;
+  .title {
+    margin: 0 auto;
+  }
+  .collapible-icon {
+    svg {
+      transition: $input-transition;
+      path {
+        fill: $color-default;
+      }
+    }
+    .expand,
+    .copllapse {
+      transform: rotate(-180deg);
+    }
+  }
+}

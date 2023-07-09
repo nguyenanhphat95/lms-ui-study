@@ -1,0 +1,1 @@
+{"version":3,"file":"ownerWindow.js","sourceRoot":"","sources":["../../src/utils/ownerWindow.ts"],"names":[],"mappings":";;;;;AAAA,kEAA4C;AAE5C,SAAwB,WAAW,CAAC,IAAI;IACtC,IAAM,GAAG,GAAG,uBAAa,CAAC,IAAI,CAAC,CAAC;IAChC,OAAO,GAAG,CAAC,WAAW,IAAI,MAAM,CAAC;AACnC,CAAC;AAHD,8BAGC"}

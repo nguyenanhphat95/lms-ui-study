@@ -1,0 +1,26 @@
+@mixin skeleton($type: 'wrap', $line: 'sm', $height: 0.6rem) {
+  @if ($type == 'wrap') {
+    min-height: 12rem;
+    background-color: $color-grey-200;
+    margin-top: spacing(4);
+    margin-bottom: spacing(4);
+  } @else if ($type == 'thumbnail') {
+    position: relative;
+    text-align: center;
+    height: 0;
+    padding-bottom: 100%;
+    margin-bottom: $spacing_lg;
+  } @else if ($type == 'line') {
+    height: $height;
+    margin-bottom: $spacing_md;
+    @if ($line == 'sm') {
+      width: 60%;
+    } @else if ($line == 'md') {
+      width: 80%;
+    } @else if ($line == 'lg') {
+      width: 100%;
+    } @else {
+      width: $line;
+    }
+  }
+}

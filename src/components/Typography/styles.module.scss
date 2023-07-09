@@ -1,0 +1,129 @@
+@import 'styles/variables.scss';
+$letter-spacing: spacing(0.15);
+
+.root {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+  name, color, font-size, line-height, letter-spacing
+*/
+$sizes: (
+  ('bigtitle3', $color-black-500, $font-size-bigtitle3, 16.5, $letter-spacing),
+  ('title1', $color-black-500, $font-size-title1, 11, $letter-spacing),
+  ('title2', $color-black-500, $font-size-title2, 9.5, $letter-spacing),
+  ('title3', $color-black-500, $font-size-title3, 10.5, $letter-spacing),
+  ('title4', $color-black-500, $font-size-title3, 10.5, $letter-spacing),
+  ('subtitle1', $color-black-500, $font-size-subtitle1, 8, $letter-spacing),
+  ('subtitle2', $color-black-500, $font-size-subtitle2, 8.75, $letter-spacing),
+  ('subtitle3', $color-black-500, $font-size-subtitle3, 7.5, $letter-spacing),
+  ('body1', $color-black-500, $font-size-body1, 5.5, 0),
+  ('body2', $color-black-500, $font-size-body2, 5, 0),
+  ('link', $color-black-500, $font-size-link, 4.5, 0),
+  ('caption', $color-black-500, $font-size-caption, 4, 0),
+  ('tiny', $color-black-500, $font-size-tiny, 3, 0)
+);
+
+@each $name, $color, $fontSize, $line-height, $spacing in $sizes {
+  .size-#{$name} {
+    color: $color;
+    font-size: $fontSize;
+    line-height: spacing($line-height);
+    letter-spacing: $spacing;
+  }
+}
+
+/*
+  name, font-weight
+*/
+$weights: (
+  ('light', $font-weight-light),
+  ('regular', $font-weight-regular),
+  ('bold', $font-weight-bold),
+  ('link', $font-weight-link)
+);
+
+@each $name, $weight in $weights {
+  .weight-#{$name} {
+    font-weight: $weight;
+  }
+}
+
+.weight-inherit {
+  font-weight: inherit;
+}
+
+/*
+  Types list
+  Order values: name, color
+*/
+$types: (
+  ('default' $color-black-500),
+  ('disabled' $color-disable),
+  ('error' $color-error),
+  ('invert' $color-invert),
+  ('link' $color-link),
+  ('title' $color-title),
+  ('sub' $color-sub),
+  ('sub-title' $color-title-sub),
+  ('form-label' $color-form-label),
+  ('success' $color-success),
+  ('warning' $color-warning),
+  ('inherit' inherit),
+  ('primary' $color-primary),
+  ('secondary' $color-secondary),
+  ('price' $color-price),
+  ('dark-title' $color-dark-blue),
+  ('hint', $color-hint)
+);
+
+@each $name, $color in $types {
+  .type-#{$name} {
+    color: $color;
+  }
+}
+
+.type-link {
+  cursor: pointer;
+}
+
+.type-strikethrough {
+  color: $color-disable;
+  text-decoration: line-through;
+}
+
+.type-inherit {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-1 {
+  -webkit-line-clamp: 1;
+}
+
+.truncate-2 {
+  -webkit-line-clamp: 2;
+}
+
+.truncate-3 {
+  -webkit-line-clamp: 3;
+}
+
+.truncate-4 {
+  -webkit-line-clamp: 4;
+}
+
+.truncate-5 {
+  -webkit-line-clamp: 5;
+}

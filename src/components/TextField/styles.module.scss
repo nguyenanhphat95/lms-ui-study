@@ -1,0 +1,46 @@
+@import 'styles/variables.scss';
+
+/**
+  States: name, color.
+*/
+$colors: (
+  ('primary', $color-black-500),
+  ('success', $color-green-700),
+  ('warning', $color-orange-700),
+  ('error', $color-red-700)
+);
+
+.text-field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $name, $textColor in $colors {
+    &:not(.disabled).color-#{$name} {
+      color: $textColor;
+    }
+  }
+
+  .input,
+  .note {
+    color: inherit;
+  }
+
+  .label {
+    margin-bottom: spacing(2);
+  }
+
+  .note {
+    margin-top: spacing(2);
+  }
+}
+
+.label {
+  display: inline-flex;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+}
+
+.note {
+  flex-basis: 100%;
+}

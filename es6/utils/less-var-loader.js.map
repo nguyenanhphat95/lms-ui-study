@@ -1,0 +1,1 @@
+{"version":3,"file":"less-var-loader.js","sourceRoot":"","sources":["../../src/utils/less-var-loader.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,MAAM,iBAAiB,CAAA;AAEtC,SAAS,IAAI,CAAC,OAAO;IACnB,OAAO,oBAAoB,IAAI,CAAC,SAAS,CAAC,QAAQ,CAAC,OAAO,CAAC,CAAC,EAAE,CAAA;AAChE,CAAC;AAED,eAAe,IAAI,CAAC"}

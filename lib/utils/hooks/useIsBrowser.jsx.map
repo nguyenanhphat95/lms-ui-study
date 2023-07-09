@@ -1,0 +1,1 @@
+{"version":3,"file":"useIsBrowser.jsx","sourceRoot":"","sources":["../../../src/utils/hooks/useIsBrowser.tsx"],"names":[],"mappings":";;;;;;AAAA,gDAA0B;AAEnB,IAAM,YAAY,GAAG;IAC1B,OAAO,eAAK,CAAC,OAAO,CAAC,cAAM,OAAA,OAAO,QAAQ,KAAK,WAAW,EAA/B,CAA+B,EAAE,CAAC,OAAO,QAAQ,CAAC,CAAC,CAAC;AACjF,CAAC,CAAC;AAFW,QAAA,YAAY,gBAEvB"}

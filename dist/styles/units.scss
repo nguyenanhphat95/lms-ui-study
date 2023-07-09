@@ -1,0 +1,11 @@
+$spacing: 0.4rem;
+
+@function spacing($value) {
+  @return $spacing * $value;
+}
+
+$spacing_xs: $spacing * 1;
+$spacing_sm: $spacing * 2;
+$spacing_md: $spacing * 3;
+$spacing_lg: $spacing * 4;
+$spacing_xl: $spacing * 5;

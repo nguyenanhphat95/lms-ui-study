@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: spacing(6) spacing(6);
+  // width: 100%;
+}
+
+.title {
+  color: $color-default;
+}
+
+.close {
+  cursor: pointer;
+  line-height: 1;
+  > svg {
+    transition: all 0.25s ease;
+  }
+
+  &:hover > svg {
+    color: $color-default;
+  }
+}

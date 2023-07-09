@@ -1,0 +1,16 @@
+@import 'styles/variables.scss';
+
+.view-source {
+  margin-left: 1rem;
+  svg {
+    fill: $color-white !important;
+  }
+}
+
+.copy {
+  cursor: pointer;
+  fill: $color-primary;
+  path, rect {
+    fill: $color-primary;
+  }
+}

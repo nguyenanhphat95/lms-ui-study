@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  padding: 24px 16px;
+  margin: -24px -16px;
+  box-sizing: content-box;
+}
+
+.vertical {
+  justify-content: flex-start;
+  padding: 8px;
+  margin: -8px;
+}
+
+.touchRipple {
+  color: rgba(0, 0, 0, 0.3);
+}

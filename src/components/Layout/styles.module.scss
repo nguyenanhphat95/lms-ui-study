@@ -1,0 +1,64 @@
+@import 'styles/variables.scss';
+
+$mini-side-bar-width: 4.8rem;
+$side-bar-width: 32rem;
+$navbar-height: 4rem;
+$content-padding: 2.4rem;
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: $navbar-height;
+  z-index: $navbar-index;
+  background-color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > div {
+    width: 100%;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: $navbar-height;
+  left: 0;
+  bottom: 0;
+  width: $side-bar-width;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: $color-white;
+}
+
+.main {
+  width: 100%;
+  padding-left: $side-bar-width;
+
+  &.full-width {
+    padding-left: 0;
+  }
+}
+
+.content {
+  background-color: $color-grey-25;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: $navbar-height;
+  padding-left: $content-padding;
+  padding-right: $content-padding;
+}
+
+.collapsed {
+  .sidebar {
+    width: $mini-side-bar-width;
+  }
+  .content {
+    padding-left: $mini-side-bar-width;
+  }
+}

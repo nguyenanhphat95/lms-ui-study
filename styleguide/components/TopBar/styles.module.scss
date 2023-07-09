@@ -1,0 +1,14 @@
+@import 'styles/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  height: 4.8rem;
+  width: 100%;
+  border: none;
+  background: $color-grey-900;
+  border-bottom: 1px solid $color-grey-800;
+  > div {
+    padding: 0 1.6rem;
+  }
+}

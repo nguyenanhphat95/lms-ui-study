@@ -1,0 +1,19 @@
+.root {
+  width: 28px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &disabled {
+    opacity: 0;
+  }
+}
+
+.vertical {
+  width: 100%;
+  height: 28px;
+  & svg {
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,21 @@
+@import 'styles/variables.scss';
+
+.header {
+  padding: spacing(24) spacing(6) spacing(2);
+  margin: spacing(-7.5) spacing(-6) 0;
+  background: $color-grey-900;
+
+  div > span {
+    color: $color-white;
+    font-weight: $font-weight-light;
+  }
+}
+
+.content {
+  padding-top: spacing(6);
+  padding-bottom: spacing(6);
+}
+
+.jsdoc {
+  margin-top: spacing(3);
+}

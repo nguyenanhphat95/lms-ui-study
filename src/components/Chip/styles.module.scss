@@ -1,0 +1,282 @@
+@import 'styles/variables.scss';
+$chip-transition: all 0.2s ease;
+$chip-transition-property: background-color, box-shadow;
+
+.root {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  background-color: $color-grey-10;
+  color: $color-black-500;
+  border-radius: radius(4);
+  white-space: nowrap;
+  transition: $chip-transition;
+  cursor: default;
+  outline: 0;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  vertical-align: middle;
+  padding: spacing(2);
+  &.disabled {
+    background-color: $color-disable;
+    pointer-events: none;
+  }
+  & .avatar {
+    margin-left: spacing(1);
+    margin-right: -spacing(1.5);
+    width: spacing(6);
+    height: spacing(6);
+    color: $color-primary;
+    font-size: 1.2rem;
+  }
+  & .avatarColorPrimary {
+    color: $color-white;
+    background-color: $color-black;
+  }
+  & .avatarColorSecondary {
+    color: white;
+    background-color: $color-black;
+  }
+  & .avatarSmall {
+    margin-left: spacing(1);
+    margin-right: -spacing(1);
+    width: spacing(4.5);
+    height: spacing(4.5);
+    font-size: 1rem;
+  }
+}
+
+/* size="small" */
+.sizeSmall {
+  height: 1.4rem;
+  padding-left: .4rem;
+  padding-right: .4rem;
+}
+
+/* color="primary" */
+.colorPrimary {
+  background-color: $color-grey-10;
+  color: $color-black-500;
+}
+
+/* color="secondary" */
+.colorSecondary {
+  background-color: red;
+  color: $color-white;
+}
+
+/* clickable={true} */
+.clickable {
+  color: $color-black-500;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  &:hover,
+  &.focusVisible {
+    background-color: opacity(0.8);
+  }
+  &:active {
+    box-shadow: $box-shadow-lv-1;
+  }
+  span {
+    color: $color-black-500;
+  }
+}
+
+.clickableColorPrimary {
+  &:hover,
+  &.focusVisible {
+    background-color: opacity(0.8);
+  }
+}
+
+.clickableColorSecondary {
+  &:hover,
+  &.focusVisible {
+    background-color: opacity(0.8);
+  }
+}
+
+.deletable {
+  &.focusVisible {
+    background-color: emphasize(backgroundColor, 0.08);
+  }
+}
+
+.deletableColorPrimary {
+  &.focusVisible {
+    background-color: opacity(0.2);
+  }
+}
+
+.deletableColorSecondary {
+  &.focusVisible {
+    background-color: opacity(0.2);
+  }
+}
+
+.outlined {
+  background-color: $color-white;
+  border: solid 1px $color-primary;
+  &.focusVisible,
+  .clickable {
+    &:hover {
+      opacity: opacity(0.2);
+    }
+  }
+  & .avatar {
+    margin-left: spacing(1);
+  }
+  & .avatarSmall {
+    margin-left: spacing(0.5);
+  }
+  & .icon {
+    margin-left: spacing(1);
+  }
+  & .iconSmall {
+    margin-left: spacing(0.5);
+  }
+  & .deleteIcon {
+    margin-right: spacing(1.2);
+  }
+  & .deleteIconSmall {
+    margin-right: spacing(1);
+  }
+}
+
+.outlinedPrimary {
+  color: $color-primary;
+  border: solid 1px $color-primary;
+  &.focusVisible,
+  .clickable {
+    &:hover {
+      background-color: $color-primary;
+      // filter: alpha(0.5);
+    }
+  }
+}
+
+.outlinedSecondary {
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  &.focusVisible,
+  .clickable {
+    &:hover {
+      background-color: $color-primary;
+      // filter: alpha(0.5);
+    }
+  }
+}
+
+.icon {
+  color: $color-primary;
+  margin-left: spacing(1.2);
+  margin-right: -spacing(1.25);
+}
+
+/* size="small" */
+.iconSmall {
+  font-size: 1.8rem;
+  margin-left: spacing(1);
+  margin-right: -spacing(1);
+}
+
+.iconColorPrimary {
+  color: inherit;
+}
+
+/* color="secondary" */
+.iconColorSecondary {
+  color: inherit;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: spacing(1.5);
+  padding-right: spacing(1.5);
+}
+
+/* size="small" */
+.labelSmall {
+  padding-left: spacing(2);
+  padding-right: spacing(2);
+  font-size: 1.2rem;
+}
+
+.deleteIcon {
+  color: $color-black-500;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 2.2rem;
+  cursor: pointer;
+  margin: 0 5px 0 spacing(8.5);
+  &:hover {
+    color: deleteIconColor;
+    opacity: 0.5;
+  }
+  fill: $color-black-500;
+  path {
+    fill: $color-black-500;
+  }
+}
+
+/* size="small" */
+.deleteIconSmall {
+  font-size: 1.6rem;
+  margin-right: spacing(1);
+  margin-left: -spacing(1);
+}
+
+/* `color="primary"` and `variant="filled"` */
+.deleteIconColorPrimary {
+  color: $color-white;
+  &:hover,
+  &:active {
+    color: $color-white;
+  }
+  svg {
+    fill: $color-white;
+    path {
+      fill: $color-white;
+    }
+  }
+}
+
+/* `color="secondary"` and `variant="filled"` */
+.deleteIconColorSecondary {
+  color: $color-primary;
+  opacity: 0.5;
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+  svg {
+    fill: $color-white;
+    path {
+      fill: $color-white;
+    }
+  }
+}
+
+/* `color="primary"` and `variant="outlined"` */
+.deleteIconOutlinedColorPrimary {
+  color: $color-primary;
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+}
+
+/* `color="secondary"` and `variant="outlined"` */
+.deleteIconOutlinedColorSecondary {
+  color: $color-primary;
+  opacity: 0.5;
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+}

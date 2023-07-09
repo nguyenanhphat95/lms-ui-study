@@ -1,0 +1,10 @@
+@import 'styles/variables.scss';
+
+.view-code {
+  svg {
+    margin-right: .5rem;
+    path {
+      fill: $color-white;
+    }
+  }
+}

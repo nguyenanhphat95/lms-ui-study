@@ -1,0 +1,10 @@
+@import 'styles/variables.scss';
+
+.panelFooter {
+  display: flex;
+  align-items: center;
+  padding: spacing(4) spacing(4);
+  width: 100%;
+  background: $color-grey-25;
+  border-top: 1px solid $color-grey-100;
+}

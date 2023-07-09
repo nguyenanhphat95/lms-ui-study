@@ -1,0 +1,29 @@
+@import 'styles/variables.scss';
+
+.item {
+  margin: spacing(4) 0;
+  padding: spacing(4) !important;
+  background-color: $color-grey-10;
+  border-radius: radius(2);
+  cursor: pointer;
+  transition: all .25s ease;
+
+  &:hover {
+    background-color: $color-grey-50;
+
+    .description {
+      opacity: 1;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.description {
+  overflow: hidden;
+  max-height: 25rem;
+  opacity: .5;
+  transition: all .25s ease;
+}
