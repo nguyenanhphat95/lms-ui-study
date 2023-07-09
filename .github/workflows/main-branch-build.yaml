@@ -30,8 +30,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Download - Nubes CLI
-        run: curl -o ./nubescli http://owfsrepo.navercorp.com/nubes/dist/nubescli_latest/linux/nubescli  && chmod +x nubescli
-
+        run: curl -sLo ./nubescli http://owfsrepo.navercorp.com/nubes/dist/nubescli_latest/linux/nubescli && chmod +x nubescli
+        
       # Build - npm / yarn 준비
       - run: npm i -g yarn
       - run: rm -rf node_modules && yarn cache clean && yarn install
