@@ -29,9 +29,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Download - Nubes CLI
-        run: curl -sLo ./nubescli http://owfsrepo.navercorp.com/nubes/dist/nubescli_latest/linux/nubescli && chmod +x nubescli
-        
+      # - name: Download - Nubes CLI
+      #   run: curl -sLo ./nubescli http://owfsrepo.navercorp.com/nubes/dist/nubescli_latest/linux/nubescli && chmod +x nubescli
+
       # Build - npm / yarn 준비
       - run: npm i -g yarn
       - run: rm -rf node_modules && yarn cache clean && yarn install
@@ -40,11 +40,11 @@ jobs:
       - run: yarn docs:build
 
       # Upload - Nubes: DEV / Build Time
-      - name: Nubes Upload to 'lms-ui/components/dev/{BUILD_TIME}' - Styleguide
-        run: ./nubescli dir-upload lms-ui/components/dev/${{env.BUILD_TIME}}/styleguide ./styleguide --overwrite
+      # - name: Nubes Upload to 'lms-ui/components/dev/{BUILD_TIME}' - Styleguide
+      #   run: ./nubescli dir-upload lms-ui/components/dev/${{env.BUILD_TIME}}/styleguide ./styleguide --overwrite
     
       # Upload - Nubes: DEV / Current
-      - name: Nubes Delete to 'lms-ui/components/dev/current' - Storybook
-        run: ./nubescli delete lms-ui/components/dev/current/storybook --dir
-      - name: Nubes Upload to 'lms-ui/components/dev/current' - Storybook
-        run: ./nubescli dir-upload lms-ui/components/dev/current/storybook ./styleguide --overwrite
+      # - name: Nubes Delete to 'lms-ui/components/dev/current' - Storybook
+      #   run: ./nubescli delete lms-ui/components/dev/current/storybook --dir
+      # - name: Nubes Upload to 'lms-ui/components/dev/current' - Storybook
+      #   run: ./nubescli dir-upload lms-ui/components/dev/current/storybook ./styleguide --overwrite
